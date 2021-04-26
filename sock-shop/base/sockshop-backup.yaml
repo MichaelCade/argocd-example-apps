@@ -1,0 +1,77 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: sockshop-backup
+  namespace: kasten-io
+  selfLink: /apis/config.kio.kasten.io/v1alpha1/namespaces/kasten-io/policies/sockshop-backup
+  uid: a40dee6b-3b08-4806-8248-746608a04ca0
+  resourceVersion: "21527076"
+  generation: 2
+  creationTimestamp: 2021-04-26T11:34:22Z
+  managedFields:
+    - manager: config-server
+      operation: Update
+      apiVersion: config.kio.kasten.io/v1alpha1
+      time: 2021-04-26T11:34:22Z
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:actions: {}
+        f:status:
+          f:hash: {}
+          f:specModifiedTime: {}
+          f:validation: {}
+    - manager: dashboardbff-server
+      operation: Update
+      apiVersion: config.kio.kasten.io/v1alpha1
+      time: 2021-04-26T11:34:22Z
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:frequency: {}
+          f:retention:
+            .: {}
+            f:daily: {}
+            f:hourly: {}
+            f:monthly: {}
+            f:weekly: {}
+            f:yearly: {}
+          f:selector:
+            .: {}
+            f:matchExpressions: {}
+        f:status: {}
+spec:
+  frequency: "@hourly"
+  retention:
+    hourly: 24
+    daily: 7
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - sockshop
+  actions:
+    - action: backup
+      backupParameters:
+        filters: {}
+        profile:
+          name: kasten-cade
+          namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        receiveString: bIzAPpoanmES3Q4gqh1kj8MmbTc9f0vG9UO35UcaQ5wLFNxAy2unWMGJZpain/QIEjmzzKuNGWik9SNd1g6xyGY0+AYfLO+bYbay8eWagcya56Fh53Acb1mo6pHIA70rSIUDsgoOkeJJsuvRtK3Sw0mnMsHTxQIVp0ubdxba2NCSycBGSUvTyCSGvzrfP082ofwlM4Oh4zhK3VpHJSrW+5O4SCnrRWi3uDoco9aRZopWp4KYaWCUItoNuaKTgNina86cKKKJdp5iTWnpp0ppozbR7vnTJKvc3BCKNX5nTicpFFTOqWAx4HupqZ2Ot9tow0cvJpgSw3Mf290viSrTSqJTuvZVcg0GqM1mp5Gju6TjsgrJm92VrzQ51gbvwnc2o9/6aIRTB4RmBMR7KDKDMKwTq9qv
+        profile:
+          name: kasten-cade
+          namespace: kasten-io
+        migrationToken:
+          name: sockshop-backup-migration-token-wqkpk
+          namespace: kasten-io
+        exportData:
+          enabled: true
+      retention: {}
