@@ -3,44 +3,6 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: sockshop-backup
   namespace: kasten-io
-  selfLink: /apis/config.kio.kasten.io/v1alpha1/namespaces/kasten-io/policies/sockshop-backup
-  uid: a40dee6b-3b08-4806-8248-746608a04ca0
-  resourceVersion: "21527076"
-  generation: 2
-  creationTimestamp: 2021-04-26T11:34:22Z
-  managedFields:
-    - manager: config-server
-      operation: Update
-      apiVersion: config.kio.kasten.io/v1alpha1
-      time: 2021-04-26T11:34:22Z
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          f:actions: {}
-        f:status:
-          f:hash: {}
-          f:specModifiedTime: {}
-          f:validation: {}
-    - manager: dashboardbff-server
-      operation: Update
-      apiVersion: config.kio.kasten.io/v1alpha1
-      time: 2021-04-26T11:34:22Z
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          .: {}
-          f:frequency: {}
-          f:retention:
-            .: {}
-            f:daily: {}
-            f:hourly: {}
-            f:monthly: {}
-            f:weekly: {}
-            f:yearly: {}
-          f:selector:
-            .: {}
-            f:matchExpressions: {}
-        f:status: {}
 spec:
   frequency: "@hourly"
   retention:
