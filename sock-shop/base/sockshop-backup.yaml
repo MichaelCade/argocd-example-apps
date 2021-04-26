@@ -1,7 +1,7 @@
 kind: Policy
 metadata:
   name: sockshop-backup
-  namespace: sockshop
+  namespace: kasten-io
 spec:
   comment: API Based Backup
   frequency: '@hourly'
