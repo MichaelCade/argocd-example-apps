@@ -27,3 +27,4 @@ resources:
 - base/user-dep.yaml
 - base/user-svc.yaml
 - base/sockshop-backup.yaml
+- base/sockshop-backup-runaction.yaml
